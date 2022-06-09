@@ -17,7 +17,7 @@ def update(request):
         return JsonResponse(response)
 
 @api_view(['GET'])
-def read(request, npm):
+def read(request, npm, trx_id=None):
     try:
         mahasiswa = Mahasiswa.objects.get(npm=npm)
         response = {'status': 'OK', 'npm': mahasiswa.npm, 'nama': mahasiswa.nama}
